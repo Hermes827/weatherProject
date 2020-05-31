@@ -8,10 +8,20 @@ class App extends React.Component {
     super()
   }
 
+  geoFindMe() {
+    function success(position) {
+      const latitude  = position.coords.latitude;
+      const longitude = position.coords.longitude;
+      console.log(latitude + " " + longitude)
+    }
+      navigator.geolocation.getCurrentPosition(success)
+  }
+
   render(){
     return (
       <div>
         hello
+        {this.geoFindMe()}
       </div>
     );
   }
