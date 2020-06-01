@@ -1,4 +1,6 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +37,20 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+body {
+  background-color: black;
+}
+
+.mainDiv {
+  color: white;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 60px;
+  width: 50%;
+}
+
+.outerDiv {
+  text-align: center;
 }
