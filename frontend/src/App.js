@@ -2,10 +2,6 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import WeatherInfo from './components/weatherInfo'
-// const weatherAPI = "https://api.openweathermap.org/data/2.5/weather?lat=47.51169420000001&lon=-122.18608669999999&units=imperial&appid=2ebf31cbd8d1d525b4f75bedc92f60f0"
-// let latitude = 0;
-// let longitude = 0;
-// let newAPI = ""
 
 class App extends React.Component {
 
@@ -22,16 +18,12 @@ class App extends React.Component {
   weatherInit = () => {
       const success = (position) => {
         this.getWeatherData(position.coords.latitude, position.coords.longitude);
-        console.log(position.coords.latitude)
-        console.log("hello")
       }
       navigator.geolocation.getCurrentPosition(success);
-      console.log("hello")
     }
 
     getWeatherData = (lat, lon) => {
      const weatherApi = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=2ebf31cbd8d1d525b4f75bedc92f60f0`;
-     console.log(weatherApi)
      fetch(weatherApi)
      .then(response => response.json())
      .then(data => {
@@ -40,13 +32,11 @@ class App extends React.Component {
            temperature: data.main.temp,
            description: data.weather[0].description
          });
-         console.log(data)
        })
    }
 
    componentDidMount(){
    this.weatherInit();
-   // this.geoFindMe();
    }
 
 
