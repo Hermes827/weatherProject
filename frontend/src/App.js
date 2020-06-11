@@ -42,6 +42,7 @@ class App extends React.Component {
    componentDidMount(){
    this.weatherInit();
    }
+   
 
   render(){
     return (
